@@ -1,0 +1,15 @@
+Flask==2.3.2
+gunicorn==20.1.0
+flask-cors==4.0.0
+os
+requests
+fitz
+pdfumber
+io
+json
+re
+BeautifulSoup
+pytesseract
+OpenAI
+load_dotenv
+pandas
