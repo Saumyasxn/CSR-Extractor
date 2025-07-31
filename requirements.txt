@@ -9,3 +9,4 @@ pytesseract
 openai
 python-dotenv
 pandas
+openpyxl
