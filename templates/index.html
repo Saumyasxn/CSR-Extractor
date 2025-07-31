@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSR Data Extractor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="animated-title">📊 CSR Data Extractor Tool</h1>
+
+    <!-- File Upload Form -->
+    <form id="uploadForm">
+      <label for="pdfFile">Upload Report (PDF)</label>
+      <!-- <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" /> -->
+      <input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" multiple />
+      <label for="reportUrl">Or Paste Report Link (URL)</label>
+      <input type="url" id="reportUrl" placeholder="https://example.com/report.pdf" />
+
+      <button type="submit" class="extract-btn">Extract CSR Data</button>
+    </form>
+
+    <!-- 🔄 Loading Spinner -->
+    <div class="spinner hidden" id="spinner"></div>
+
+    <!-- ✅ Results Table -->
+    <div id="results" class="results-container hidden">
+      <h2>📄 Extracted CSR Data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Fiscal Year</th>
+            <th>CSR Budget</th>
+            <th>CSR Theme</th>
+            <th>Budget for Education</th>
+            <th>No. of Beneficiaries</th>
+            <th>Type of Beneficiaries</th>
+            <th>Literacy Rate</th>
+            <th>Type of Intervention</th>
+            <th>Projects Undertaken</th>
+            <th>Location Covered</th>
+            <th>Partner Organizations</th>
+            <th>Govt. Scheme Integrated</th>
+            <th>Outcomes</th>
+          </tr>
+        </thead>
+        <tbody id="dataBody">
+          <!-- Filled dynamically -->
+        </tbody>
+      </table>
+
+      <!-- 📥 Download Excel -->
+      <button class="download-btn" id="downloadBtn">⬇ Download Excel</button>
+    </div>
+  </div>
+
+  <!-- ✅ Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
